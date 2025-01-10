@@ -65,6 +65,64 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+        /* Discount Coupons */
+        .coupon {
+            background-color: #ffeb3b;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .coupon input {
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Student Reviews */
+        .reviews {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .review {
+            width: 30%;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Interactive Demo */
+        .demo {
+            background-color: #eaf2f8;
+            padding: 50px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .demo iframe {
+            width: 80%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Accessibility */
+        .accessibility {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .accessibility button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            background-color: #0073e6;
+            color: white;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -110,8 +168,73 @@
         </ul>
     </section>
 
+    <!-- Discount Coupons -->
+    <section class="coupon">
+        <h2>Grab Your Discount Coupon!</h2>
+        <input type="text" placeholder="Enter coupon code" id="couponCode">
+        <button onclick="applyCoupon()">Apply</button>
+        <p id="discountMessage"></p>
+    </section>
+
+    <!-- Student Reviews -->
+    <section class="reviews">
+        <div class="review">
+            <h3>John Smith</h3>
+            <p>"This platform is a lifesaver! I saved so much on textbooks!"</p>
+        </div>
+        <div class="review">
+            <h3>Jane Doe</h3>
+            <p>"Easy to use and affordable! Highly recommend it to fellow students."</p>
+        </div>
+        <div class="review">
+            <h3>Mark Johnson</h3>
+            <p>"The ability to rent digital and physical books is awesome!"</p>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="demo">
+        <h2>Watch How It Works!</h2>
+        <iframe src="https://www.youtube.com/embed/somevideo" title="Interactive Demo"></iframe>
+    </section>
+
+    <!-- Accessibility Features -->
+    <section class="accessibility">
+        <h2>Accessibility Options</h2>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <button onclick="increaseTextSize()">Increase Text Size</button>
+        <button onclick="decreaseTextSize()">Decrease Text Size</button>
+    </section>
+
     <footer id="contact">
         <p>Contact us at: support@smartstudyhub.com</p>
     </footer>
+
+    <script>
+        // Discount Coupon Functionality
+        function applyCoupon() {
+            const couponCode = document.getElementById('couponCode').value;
+            if (couponCode === 'STUDENT20') {
+                document.getElementById('discountMessage').innerText = "Coupon applied! You get 20% off.";
+            } else {
+                document.getElementById('discountMessage').innerText = "Invalid coupon code.";
+            }
+        }
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Text Size Increase/Decrease
+        function increaseTextSize() {
+            document.body.style.fontSize = '18px';
+        }
+
+        function decreaseTextSize() {
+            document.body.style.fontSize = '14px';
+        }
+    </script>
 </body>
 </html>
+
